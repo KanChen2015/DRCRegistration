@@ -8,12 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		3E6ADD771D0610FB0054D178 /* DRCRegistrationKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E6ADD761D0610FB0054D178 /* DRCRegistrationKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3E6ADD8D1D0612A00054D178 /* DRCLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E6ADD8C1D0612A00054D178 /* DRCLogin.storyboard */; };
+		3E6ADD8F1D0613980054D178 /* DRCLoginRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6ADD8E1D0613980054D178 /* DRCLoginRootViewController.swift */; };
+		3E6ADD911D0614410054D178 /* DRCLoginPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6ADD901D0614410054D178 /* DRCLoginPageViewController.swift */; };
+		3E6ADD931D0614D40054D178 /* DRCLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6ADD921D0614D40054D178 /* DRCLoginViewController.swift */; };
+		3E6ADD951D061BCD0054D178 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E6ADD941D061BCD0054D178 /* Assets.xcassets */; };
+		3E6ADD9A1D061E130054D178 /* DRCWelcomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6ADD991D061E130054D178 /* DRCWelcomePage.swift */; };
+		3E6ADDA31D0632BD0054D178 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6ADDA21D0632BD0054D178 /* CustomTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3E6ADD731D0610FB0054D178 /* DRCRegistrationKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DRCRegistrationKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E6ADD761D0610FB0054D178 /* DRCRegistrationKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DRCRegistrationKit.h; sourceTree = "<group>"; };
 		3E6ADD781D0610FB0054D178 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3E6ADD8C1D0612A00054D178 /* DRCLogin.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DRCLogin.storyboard; sourceTree = "<group>"; };
+		3E6ADD8E1D0613980054D178 /* DRCLoginRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRCLoginRootViewController.swift; sourceTree = "<group>"; };
+		3E6ADD901D0614410054D178 /* DRCLoginPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRCLoginPageViewController.swift; sourceTree = "<group>"; };
+		3E6ADD921D0614D40054D178 /* DRCLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRCLoginViewController.swift; sourceTree = "<group>"; };
+		3E6ADD941D061BCD0054D178 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3E6ADD991D061E130054D178 /* DRCWelcomePage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRCWelcomePage.swift; sourceTree = "<group>"; };
+		3E6ADDA21D0632BD0054D178 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +61,13 @@
 			isa = PBXGroup;
 			children = (
 				3E6ADD761D0610FB0054D178 /* DRCRegistrationKit.h */,
+				3E6ADD8C1D0612A00054D178 /* DRCLogin.storyboard */,
+				3E6ADD8E1D0613980054D178 /* DRCLoginRootViewController.swift */,
+				3E6ADD901D0614410054D178 /* DRCLoginPageViewController.swift */,
+				3E6ADD921D0614D40054D178 /* DRCLoginViewController.swift */,
+				3E6ADD991D061E130054D178 /* DRCWelcomePage.swift */,
+				3E6ADDA21D0632BD0054D178 /* CustomTextField.swift */,
+				3E6ADD941D061BCD0054D178 /* Assets.xcassets */,
 				3E6ADD781D0610FB0054D178 /* Info.plist */,
 			);
 			path = DRCRegistrationKit;
@@ -120,6 +141,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E6ADD951D061BCD0054D178 /* Assets.xcassets in Resources */,
+				3E6ADD8D1D0612A00054D178 /* DRCLogin.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,6 +153,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E6ADD911D0614410054D178 /* DRCLoginPageViewController.swift in Sources */,
+				3E6ADD9A1D061E130054D178 /* DRCWelcomePage.swift in Sources */,
+				3E6ADD8F1D0613980054D178 /* DRCLoginRootViewController.swift in Sources */,
+				3E6ADD931D0614D40054D178 /* DRCLoginViewController.swift in Sources */,
+				3E6ADDA31D0632BD0054D178 /* CustomTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,6 +258,7 @@
 		3E6ADD7C1D0610FB0054D178 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -241,12 +270,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.drchrono.DRCRegistrationKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		3E6ADD7D1D0610FB0054D178 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -280,6 +311,7 @@
 				3E6ADD7D1D0610FB0054D178 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -10,21 +10,24 @@ import UIKit
 
 @objc public protocol DRCLoginRootViewControllerDelegate {
     func drcLoginRootControllerDidAuthenticateSuccess(controller: DRCLoginRootViewController)
-    func drcLoginRootController(controller: DRCLoginRootViewController, didAttemptSignInWithUsername username: String, password: String, twoFactorCode: String, complete: (success: Bool, JSON: AnyObject, error: NSError?) -> Void)
+    func drcLoginRootController(controller: DRCLoginRootViewController, didAttemptSignInWithUsername username: String, password: String, twoFactorCode: String, complete: (success: Bool, twoFactorRequired: Bool, error: NSError?) -> Void)
     func drcLoginRootController(controller: DRCLoginRootViewController, didAttemptSignInWithPINCode PINCode: String)
 }
 
 public class DRCLoginRootViewController: UIViewController {
-    static public func instantiateFromStoryBoard() -> DRCLoginRootViewController {
+    static public func instantiateFromStoryBoardWithDelegate(delegate: DRCLoginRootViewControllerDelegate?) -> DRCLoginRootViewController {
         let storyboard = UIStoryboard(name: "DRCLogin", bundle: NSBundle(forClass: self))
         guard let vc = storyboard.instantiateViewControllerWithIdentifier("LoginRoot") as? DRCLoginRootViewController else {
             fatalError("failed to init from storyboard")
         }
+        vc.delegate = delegate
         return vc
     }
-    weak var delegate: DRCLoginRootViewControllerDelegate?
+    var delegate: DRCLoginRootViewControllerDelegate?
+    public var signupViewModelDelegate: DRRSignUpViewModelDelegate?
     override public func viewDidLoad() {
         super.viewDidLoad()
+        DelegateProvider.shared.signupViewModelDelegate = signupViewModelDelegate
         // Do any additional setup after loading the view.
     }
 
@@ -46,7 +49,12 @@ extension DRCLoginRootViewController: DRCLoginViewControllerDelegate {
         delegate?.drcLoginRootController(self, didAttemptSignInWithPINCode: PINCode)
     }
 
-    func drcLoginController(controller: DRCLoginViewController, didAttemptSignInWithUserName username: String, password: String, twoFactorCode: String, complete: (success: Bool, JSON: AnyObject, error: NSError?) -> Void) {
-        delegate?.drcLoginRootController(self, didAttemptSignInWithUsername: username, password: password, twoFactorCode: twoFactorCode, complete: complete)
+    func drcLoginController(controller: DRCLoginViewController, didAttemptSignInWithUserName username: String, password: String, twoFactorCode: String, complete: (success: Bool, twoFactorRequired: Bool, error: NSError?) -> Void) {
+         delegate?.drcLoginRootController(self, didAttemptSignInWithUsername: username, password: password, twoFactorCode: twoFactorCode, complete: complete)
     }
+}
+
+internal class DelegateProvider {
+    static let shared = DelegateProvider()
+    var signupViewModelDelegate: DRRSignUpViewModelDelegate?
 }

@@ -10,11 +10,12 @@ import UIKit
 
 protocol DRCLoginViewControllerDelegate: class {
     func drcLoginControllerDidAuthenticateSuccess(controller: DRCLoginViewController)
-    func drcLoginController(controller: DRCLoginViewController, didAttemptSignInWithUserName username: String, password: String, twoFactorCode: String, complete: (success: Bool, JSON: AnyObject, error: NSError?) -> Void)
+    func drcLoginController(controller: DRCLoginViewController, didAttemptSignInWithUserName username: String, password: String, twoFactorCode: String, complete: (success: Bool, twoFactorRequired: Bool, error: NSError?) -> Void)
     func drcLoginController(controller: DRCLoginViewController, didAttemptSignInWithPINCode PINCode: String)
 }
 
 class DRCLoginViewController: UIViewController {
+    private let signupSegueId = "startSignUp"
     @IBOutlet weak var usernameTextField: CustomTextField!
     @IBOutlet weak var passwordTextField: CustomTextField!
     @IBOutlet weak var credentialsHolderView: UIView!
@@ -23,11 +24,7 @@ class DRCLoginViewController: UIViewController {
     weak var delegate: DRCLoginViewControllerDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        credentialsHolderView.layer.cornerRadius = 4.0
-        credentialsHolderView.layer.borderColor = UIColor.lightGrayColor().CGColor
-        credentialsHolderView.layer.borderWidth = 1.0
-        credentialsHolderView.layer.masksToBounds = true
+        credentialsHolderView.addBorderForInputContainerStyle()
     }
 
     @IBAction func signInButtonClicked(sender: AnyObject) {
@@ -35,22 +32,22 @@ class DRCLoginViewController: UIViewController {
             return
         }
         loginActivityIndicator.startAnimating()
-        delegate?.drcLoginController(self, didAttemptSignInWithUserName: username, password: password, twoFactorCode: "", complete: { (success, JSON, error) in
-            self.loginActivityIndicator.stopAnimating()
-            if let error = error {
-                //TODO: error
-                return
-            }
-            guard let json = JSON as? [String: AnyObject] else {
-                //TODO: error
-                return
-            }
-            let twoFactorRequired = "2-Factor Token Required" == json["login_errors"] as? String
-            if success {
-                self.delegate?.drcLoginControllerDidAuthenticateSuccess(self)
-            } else if twoFactorRequired {
-                //TODO Two Factor
-            } else {
+        delegate?.drcLoginController(self, didAttemptSignInWithUserName: username, password: password, twoFactorCode: "", complete: { (success, twoFactorRequired, error) in
+            dispatch_async(dispatch_get_main_queue()) {
+                self.loginActivityIndicator.stopAnimating()
+                if let error = error {
+                    //TODO: error
+                    return
+                }
+                if success {
+                    self.delegate?.drcLoginControllerDidAuthenticateSuccess(self)
+                } else if twoFactorRequired {
+                    //two Factor Step Yes
+                    //show authy field
+                } else {
+                    // error
+                    // change the
+                }
 
             }
         })
@@ -67,5 +64,20 @@ class DRCLoginViewController: UIViewController {
 
     private func validateInput() -> Bool {
         return true
+    }
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "startSignUp" {
+            (segue.destinationViewController as? DRRSignUpNavigationController)?.signUpDelegate = self
+        }
+    }
+}
+
+extension DRCLoginViewController: DRRSignUPNavigationControllerDelegate {
+    func signupController(controller: DRRSignUpNavigationController, didSuccessSignUpWithUsername username: String, password: String) {
+        controller.dismissViewControllerAnimated(true, completion: nil)
+        usernameTextField.text = username
+        passwordTextField.text = password
+        signInButtonClicked(self)
     }
 }

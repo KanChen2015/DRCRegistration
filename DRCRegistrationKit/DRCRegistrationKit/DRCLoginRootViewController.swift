@@ -24,10 +24,10 @@ public class DRCLoginRootViewController: UIViewController {
         return vc
     }
     var delegate: DRCLoginRootViewControllerDelegate?
-    public var signupViewModelDelegate: DRRSignUpViewModelDelegate?
+    public var networkingDelegate: DRCRegistrationNetworkingDelegate?
     override public func viewDidLoad() {
         super.viewDidLoad()
-        DelegateProvider.shared.signupViewModelDelegate = signupViewModelDelegate
+        DelegateProvider.shared.networkingDelegate = networkingDelegate
         // Do any additional setup after loading the view.
     }
 
@@ -56,5 +56,5 @@ extension DRCLoginRootViewController: DRCLoginViewControllerDelegate {
 
 internal class DelegateProvider {
     static let shared = DelegateProvider()
-    var signupViewModelDelegate: DRRSignUpViewModelDelegate?
+    var networkingDelegate: DRCRegistrationNetworkingDelegate?
 }

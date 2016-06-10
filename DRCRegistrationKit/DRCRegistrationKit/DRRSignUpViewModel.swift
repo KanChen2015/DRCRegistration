@@ -29,15 +29,9 @@ internal let kDRRSignupTermsConfirmedKey = "terms_of_service_agreement"
 //#define kPracticeSizeDisplays @[@"Just Me", @"2 to 5", @"6 to 10", @"10+"]
 //#define kBillingTypeDisplays @[@"Insurance", @"Cash-based"]
 
-@objc public protocol DRRSignUpViewModelDelegate {
-    func attemptSignupStep1RequestWithInfo(info: [String: AnyObject], complete: (json: [String: AnyObject], error: NSError?) -> Void)
-    func attemptSignupStep2RequestWithInfo(info: [String: AnyObject], complete: (json: [String: AnyObject], error: NSError?) -> Void)
-    func attemptSignupStep3RequestWithInfo(info: [String: AnyObject], complete: (json: [String: AnyObject], error: NSError?) -> Void)
-}
-
 final class DRRSignUpViewModel {
     typealias signupStepComplete = (success: Bool, errorMsg: String?) -> Void
-    var delegate: DRRSignUpViewModelDelegate? = DelegateProvider.shared.signupViewModelDelegate
+    var delegate: DRCRegistrationNetworkingDelegate? = DelegateProvider.shared.networkingDelegate
     var stateChoices: [String] = []
     var jobTitleChoices: [String] = []
     var specialtyChoices: [String] = []

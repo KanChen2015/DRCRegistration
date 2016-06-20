@@ -16,6 +16,7 @@
 		3E6ADD9A1D061E130054D178 /* DRCWelcomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6ADD991D061E130054D178 /* DRCWelcomePage.swift */; };
 		3E6ADDA31D0632BD0054D178 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6ADDA21D0632BD0054D178 /* CustomTextField.swift */; };
 		3E6ADDC51D0895FA0054D178 /* DRRSignUpStep1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6ADDC41D0895FA0054D178 /* DRRSignUpStep1.swift */; };
+		3E6D50801D18603600C69935 /* OnPatientLinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6D507F1D18603600C69935 /* OnPatientLinkViewController.swift */; };
 		3EB4E7D81D0B515600E34134 /* DRCForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB4E7D71D0B515600E34134 /* DRCForgotPasswordViewController.swift */; };
 		3EB4E7DA1D0B53C400E34134 /* DRCRegistrationNetworkingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB4E7D91D0B53C400E34134 /* DRCRegistrationNetworkingDelegate.swift */; };
 		3EBFACCF1D089EAC00A0A113 /* DRCTermsOfServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBFACCE1D089EAC00A0A113 /* DRCTermsOfServiceViewController.swift */; };
@@ -38,6 +39,7 @@
 		3E6ADD991D061E130054D178 /* DRCWelcomePage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRCWelcomePage.swift; sourceTree = "<group>"; };
 		3E6ADDA21D0632BD0054D178 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		3E6ADDC41D0895FA0054D178 /* DRRSignUpStep1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRRSignUpStep1.swift; sourceTree = "<group>"; };
+		3E6D507F1D18603600C69935 /* OnPatientLinkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnPatientLinkViewController.swift; sourceTree = "<group>"; };
 		3EB4E7D71D0B515600E34134 /* DRCForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRCForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		3EB4E7D91D0B53C400E34134 /* DRCRegistrationNetworkingDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRCRegistrationNetworkingDelegate.swift; sourceTree = "<group>"; };
 		3EBFACCE1D089EAC00A0A113 /* DRCTermsOfServiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DRCTermsOfServiceViewController.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				3ED7F7BB1D08C72C00A24C93 /* DRRSignUpStep2.swift */,
 				3ED7F7C61D09DBC000A24C93 /* DRRSignUpStep3.swift */,
 				3ED7F7AF1D08B07F00A24C93 /* DRRSignUpViewModel.swift */,
+				3E6D507F1D18603600C69935 /* OnPatientLinkViewController.swift */,
 			);
 			name = SignUp;
 			sourceTree = "<group>";
@@ -193,6 +196,7 @@
 				3E6ADD9A1D061E130054D178 /* DRCWelcomePage.swift in Sources */,
 				3ED7F7C91D09DD9100A24C93 /* Utility.swift in Sources */,
 				3ED7F7CB1D0A0A7A00A24C93 /* DRRSignUpNavigationController.swift in Sources */,
+				3E6D50801D18603600C69935 /* OnPatientLinkViewController.swift in Sources */,
 				3E6ADD8F1D0613980054D178 /* DRCLoginRootViewController.swift in Sources */,
 				3E6ADD931D0614D40054D178 /* DRCLoginViewController.swift in Sources */,
 				3EBFACCF1D089EAC00A0A113 /* DRCTermsOfServiceViewController.swift in Sources */,

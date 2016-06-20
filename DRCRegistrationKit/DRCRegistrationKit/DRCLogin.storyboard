@@ -86,6 +86,194 @@
             </objects>
             <point key="canvasLocation" x="905" y="-197"/>
         </scene>
+        <!--On Patient Link View Controller-->
+        <scene sceneID="Wdx-Fg-drw">
+            <objects>
+                <viewController id="WZM-bf-MKe" customClass="OnPatientLinkViewController" customModule="DRCRegistrationKit" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="iQy-qf-RwL"/>
+                        <viewControllerLayoutGuide type="bottom" id="od5-Bk-lRC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ObX-ES-aiy">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sSz-LL-3iE">
+                                <rect key="frame" x="20" y="0.0" width="48" height="30"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancelButtonClicked:" destination="WZM-bf-MKe" eventType="touchUpInside" id="nUx-AU-rPT"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Patient Sign-In" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J5r-LJ-H0L">
+                                <rect key="frame" x="160" y="60" width="280" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="0Gs-mT-OIn"/>
+                                    <constraint firstAttribute="height" constant="28" id="a1D-vt-3Wz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F7a-XE-KeC">
+                                <rect key="frame" x="120" y="108" width="360" height="77"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="368" id="Seg-X6-CRR"/>
+                                </constraints>
+                                <string key="text">You can sign-in to your personal health record by following the app download below. To sign up for an account, simply follow your health care provider's invitation.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact">
+                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                </variation>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Mn-Fi-beL">
+                                <rect key="frame" x="0.0" y="205" width="600" height="145"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i5v-88-O4u">
+                                        <rect key="frame" x="100" y="21" width="400" height="44"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-onpatient-download" translatesAutoresizingMaskIntoConstraints="NO" id="fZG-I1-FCH">
+                                                <rect key="frame" x="0.0" y="3" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="0U5-WH-HRZ"/>
+                                                    <constraint firstAttribute="width" constant="40" id="D8u-IS-hhx"/>
+                                                </constraints>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="0U5-WH-HRZ"/>
+                                                        <exclude reference="D8u-IS-hhx"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="widthClass=compact">
+                                                    <mask key="constraints">
+                                                        <include reference="0U5-WH-HRZ"/>
+                                                        <include reference="D8u-IS-hhx"/>
+                                                    </mask>
+                                                </variation>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="onpatient PHR" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uYE-jt-7c2">
+                                                <rect key="frame" x="48" y="0.0" width="109" height="20"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="20" id="Bhe-5w-Hpl"/>
+                                                    <constraint firstAttribute="width" constant="109" id="qBR-cL-VQK"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="Bhe-5w-Hpl"/>
+                                                        <exclude reference="qBR-cL-VQK"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="heightClass=compact" ambiguous="YES" misplaced="YES">
+                                                    <rect key="frame" x="48" y="0.0" width="252" height="20"/>
+                                                </variation>
+                                                <variation key="widthClass=compact">
+                                                    <mask key="constraints">
+                                                        <include reference="Bhe-5w-Hpl"/>
+                                                        <include reference="qBR-cL-VQK"/>
+                                                    </mask>
+                                                </variation>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Patient Personal Health Record" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XRn-aO-8Fs">
+                                                <rect key="frame" x="48" y="26" width="201" height="17"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="233" id="1gh-nh-Pg8"/>
+                                                    <constraint firstAttribute="height" constant="24" id="2bY-uh-Nir"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="1gh-nh-Pg8"/>
+                                                        <exclude reference="2bY-uh-Nir"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="heightClass=compact" ambiguous="YES" misplaced="YES">
+                                                    <rect key="frame" x="48" y="26" width="241" height="17"/>
+                                                </variation>
+                                                <variation key="widthClass=compact">
+                                                    <mask key="constraints">
+                                                        <include reference="1gh-nh-Pg8"/>
+                                                        <include reference="2bY-uh-Nir"/>
+                                                    </mask>
+                                                </variation>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="fZG-I1-FCH" firstAttribute="top" secondItem="uYE-jt-7c2" secondAttribute="top" constant="3" id="1Bt-fa-VsW"/>
+                                            <constraint firstItem="uYE-jt-7c2" firstAttribute="leading" secondItem="XRn-aO-8Fs" secondAttribute="leading" id="TKo-Df-h1Z"/>
+                                            <constraint firstItem="fZG-I1-FCH" firstAttribute="top" secondItem="i5v-88-O4u" secondAttribute="top" constant="3" id="eCv-fi-opM"/>
+                                            <constraint firstItem="fZG-I1-FCH" firstAttribute="leading" secondItem="i5v-88-O4u" secondAttribute="leading" id="iQS-ic-OjD"/>
+                                            <constraint firstItem="uYE-jt-7c2" firstAttribute="leading" secondItem="fZG-I1-FCH" secondAttribute="trailing" constant="8" id="qbW-a9-n13">
+                                                <variation key="widthClass=compact" constant="10"/>
+                                            </constraint>
+                                            <constraint firstItem="fZG-I1-FCH" firstAttribute="bottom" secondItem="XRn-aO-8Fs" secondAttribute="bottom" id="r0W-AA-Qh1"/>
+                                        </constraints>
+                                        <variation key="heightClass=compact" ambiguous="YES" misplaced="YES">
+                                            <rect key="frame" x="147" y="21" width="308" height="44"/>
+                                        </variation>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Nv-ip-opP" customClass="DRCButtonBlue">
+                                        <rect key="frame" x="100" y="81" width="400" height="44"/>
+                                        <color key="backgroundColor" red="0.23529411759999999" green="0.50980392159999999" blue="0.82352941180000006" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="1xf-oL-sA5"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Download &amp; Sign-In">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="disabled">
+                                            <color key="titleColor" red="0.3922506549" green="0.64702236150000003" blue="0.96189651949999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="downloadOnPatientClicked:" destination="WZM-bf-MKe" eventType="touchUpInside" id="S9u-U3-Z3W"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="5Nv-ip-opP" firstAttribute="centerX" secondItem="i5v-88-O4u" secondAttribute="centerX" id="1Lh-A3-pM3"/>
+                                    <constraint firstAttribute="height" constant="145" id="8lE-Km-beI"/>
+                                    <constraint firstItem="i5v-88-O4u" firstAttribute="centerX" secondItem="8Mn-Fi-beL" secondAttribute="centerX" id="SBO-jM-o9L"/>
+                                    <constraint firstItem="5Nv-ip-opP" firstAttribute="width" secondItem="i5v-88-O4u" secondAttribute="width" id="afL-nW-TzA"/>
+                                    <constraint firstAttribute="bottom" secondItem="5Nv-ip-opP" secondAttribute="bottom" constant="20" id="b8n-dR-3Bk"/>
+                                    <constraint firstItem="5Nv-ip-opP" firstAttribute="leading" secondItem="8Mn-Fi-beL" secondAttribute="leading" constant="100" id="bSh-XE-pkG">
+                                        <variation key="widthClass=compact" constant="20"/>
+                                    </constraint>
+                                    <constraint firstItem="5Nv-ip-opP" firstAttribute="height" secondItem="i5v-88-O4u" secondAttribute="height" id="n0T-ss-UXM"/>
+                                    <constraint firstItem="i5v-88-O4u" firstAttribute="top" secondItem="8Mn-Fi-beL" secondAttribute="top" constant="21" id="rVb-sM-eOV"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.27450980390000002" green="0.54901960780000003" blue="0.84313725490000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="8Mn-Fi-beL" secondAttribute="trailing" id="3ZL-zE-VmF"/>
+                            <constraint firstItem="F7a-XE-KeC" firstAttribute="centerX" secondItem="J5r-LJ-H0L" secondAttribute="centerX" id="Br4-4B-9RS"/>
+                            <constraint firstItem="J5r-LJ-H0L" firstAttribute="centerX" secondItem="ObX-ES-aiy" secondAttribute="centerX" id="I1h-p0-l1p"/>
+                            <constraint firstItem="8Mn-Fi-beL" firstAttribute="top" secondItem="F7a-XE-KeC" secondAttribute="bottom" constant="20" id="IOS-4U-cyf"/>
+                            <constraint firstItem="F7a-XE-KeC" firstAttribute="top" secondItem="J5r-LJ-H0L" secondAttribute="bottom" constant="20" id="bgg-oC-Lr2"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="sSz-LL-3iE" secondAttribute="leading" id="dA0-fs-2X7"/>
+                            <constraint firstItem="J5r-LJ-H0L" firstAttribute="top" secondItem="sSz-LL-3iE" secondAttribute="bottom" constant="30" id="lcF-9t-sCB"/>
+                            <constraint firstItem="8Mn-Fi-beL" firstAttribute="leading" secondItem="ObX-ES-aiy" secondAttribute="leading" id="rg7-pz-VzD"/>
+                            <constraint firstItem="sSz-LL-3iE" firstAttribute="top" secondItem="iQy-qf-RwL" secondAttribute="bottom" id="vFR-Kr-jQ8"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3la-JY-FTE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1599" y="-1011"/>
+        </scene>
         <!--Terms Of Service View Controller-->
         <scene sceneID="7d6-q9-8j2">
             <objects>
@@ -111,7 +299,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Terms of Service" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FS7-dF-20y">
                                         <rect key="frame" x="236" y="12" width="129" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ax0-JS-b94">
@@ -226,7 +414,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By signing up, you agree to drchrono's " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LXQ-QE-cb2">
                                         <rect key="frame" x="0.0" y="0.0" width="298" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wJG-Oi-F0W">
@@ -251,6 +439,15 @@
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="ZY0-tk-ahe">
                                 <rect key="frame" x="342" y="263" width="20" height="20"/>
                             </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lCx-9P-Pcq">
+                                <rect key="frame" x="238" y="550" width="124" height="30"/>
+                                <state key="normal" title="Are you a patient?">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="WZM-bf-MKe" kind="presentation" modalPresentationStyle="formSheet" id="UAd-ht-im8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.23529411759999999" green="0.50980392159999999" blue="0.82352941180000006" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -260,7 +457,9 @@
                             <constraint firstItem="Wg8-No-dag" firstAttribute="top" secondItem="Mvi-jy-9Sg" secondAttribute="bottom" constant="20" id="7js-Vx-ZHb"/>
                             <constraint firstItem="sTw-yE-898" firstAttribute="top" secondItem="Wg8-No-dag" secondAttribute="bottom" constant="20" id="92A-Nd-Qq3"/>
                             <constraint firstItem="ZY0-tk-ahe" firstAttribute="centerY" secondItem="Wg8-No-dag" secondAttribute="centerY" id="A15-XW-ulc"/>
+                            <constraint firstItem="dfw-3e-ZER" firstAttribute="top" secondItem="lCx-9P-Pcq" secondAttribute="bottom" constant="20" id="A93-wK-2JO"/>
                             <constraint firstItem="Mvi-jy-9Sg" firstAttribute="top" secondItem="hjN-F2-iJi" secondAttribute="bottom" constant="60" id="CW3-to-QFH"/>
+                            <constraint firstItem="lCx-9P-Pcq" firstAttribute="centerX" secondItem="VG0-XY-g4T" secondAttribute="centerX" id="Wcy-N3-sfj"/>
                             <constraint firstItem="ZY0-tk-ahe" firstAttribute="leading" secondItem="Wg8-No-dag" secondAttribute="trailing" constant="8" id="aLn-uk-E6Q"/>
                             <constraint firstItem="sTw-yE-898" firstAttribute="centerX" secondItem="VG0-XY-g4T" secondAttribute="centerX" id="bdS-kq-EaM"/>
                             <constraint firstItem="Mvi-jy-9Sg" firstAttribute="centerY" secondItem="VG0-XY-g4T" secondAttribute="centerY" id="kfZ-Or-WQb"/>
@@ -365,7 +564,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By signing up, you agree to drchrono's " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4uy-At-OqK">
                                         <rect key="frame" x="0.0" y="0.0" width="298" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xeX-Wx-wfj">
@@ -499,7 +698,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By signing up, you agree to drchrono's " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lYx-YH-RSe">
                                         <rect key="frame" x="0.0" y="0.0" width="298" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GEp-H2-JER">
@@ -800,7 +999,10 @@
             <point key="canvasLocation" x="1465" y="538"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icon-onpatient-download" width="40" height="40"/>
+    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Zck-C5-I31"/>
+        <segue reference="NVc-SC-TbK"/>
     </inferredMetricsTieBreakers>
 </document>

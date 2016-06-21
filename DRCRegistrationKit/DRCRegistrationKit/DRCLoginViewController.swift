@@ -89,6 +89,8 @@ extension DRCLoginViewController: DRCPINCodeViewControllerDelegate {
         return delegate?.drcLoginController(self, didAttemptSignInWithPINCode: PIN) ?? false
     }
     func pinCodeControllerDidPassAuth(controller: DRCPINCodeViewController) {
-        delegate?.drcLoginControllerDidAuthenticateSuccess(self)
+        dismissViewControllerAnimated(false) { 
+            self.delegate?.drcLoginControllerDidAuthenticateSuccess(self)
+        }
     }
 }

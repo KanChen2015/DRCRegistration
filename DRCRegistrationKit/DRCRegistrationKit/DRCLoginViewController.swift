@@ -11,7 +11,7 @@ import UIKit
 protocol DRCLoginViewControllerDelegate: class {
     func drcLoginControllerDidAuthenticateSuccess(controller: DRCLoginViewController)
     func drcLoginController(controller: DRCLoginViewController, didAttemptSignInWithUserName username: String, password: String, twoFactorCode: String, complete: (success: Bool, twoFactorRequired: Bool, error: NSError?) -> Void)
-    func drcLoginController(controller: DRCLoginViewController, didAttemptSignInWithPINCode PINCode: String)
+    func drcLoginController(controller: DRCLoginViewController, didAttemptSignInWithPINCode PINCode: String) -> Bool
 }
 
 class DRCLoginViewController: UIViewController {
@@ -69,6 +69,8 @@ class DRCLoginViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "startSignUp" {
             (segue.destinationViewController as? DRRSignUpNavigationController)?.signUpDelegate = self
+        } else if segue.identifier == "displayPINCodeView" {
+            (segue.destinationViewController as? DRCPINCodeViewController)?.delegate = self
         }
     }
 }
@@ -79,5 +81,14 @@ extension DRCLoginViewController: DRRSignUPNavigationControllerDelegate {
         usernameTextField.text = username
         passwordTextField.text = password
         signInButtonClicked(self)
+    }
+}
+
+extension DRCLoginViewController: DRCPINCodeViewControllerDelegate {
+    func pinCodeController(controller: DRCPINCodeViewController, authenticateWithPIN PIN: String) -> Bool {
+        return delegate?.drcLoginController(self, didAttemptSignInWithPINCode: PIN) ?? false
+    }
+    func pinCodeControllerDidPassAuth(controller: DRCPINCodeViewController) {
+        delegate?.drcLoginControllerDidAuthenticateSuccess(self)
     }
 }

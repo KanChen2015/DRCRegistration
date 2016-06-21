@@ -13,4 +13,6 @@ import Foundation
     func attemptSignupStep2RequestWithInfo(info: [String: AnyObject], complete: (json: [String: AnyObject], error: NSError?) -> Void)
     func attemptSignupStep3RequestWithInfo(info: [String: AnyObject], complete: (json: [String: AnyObject], error: NSError?) -> Void)
     func forgotPasswordWithEmail(email: String, complete: (success: Bool) -> Void)
+
+    var isTouchIDEnable: Bool { get }
 }

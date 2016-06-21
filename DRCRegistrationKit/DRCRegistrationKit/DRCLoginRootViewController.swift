@@ -11,7 +11,7 @@ import UIKit
 @objc public protocol DRCLoginRootViewControllerDelegate {
     func drcLoginRootControllerDidAuthenticateSuccess(controller: DRCLoginRootViewController)
     func drcLoginRootController(controller: DRCLoginRootViewController, didAttemptSignInWithUsername username: String, password: String, twoFactorCode: String, complete: (success: Bool, twoFactorRequired: Bool, error: NSError?) -> Void)
-    func drcLoginRootController(controller: DRCLoginRootViewController, didAttemptSignInWithPINCode PINCode: String)
+    func drcLoginRootController(controller: DRCLoginRootViewController, didAttemptSignInWithPINCode PINCode: String) -> Bool
 }
 
 public class DRCLoginRootViewController: UIViewController {
@@ -45,8 +45,8 @@ extension DRCLoginRootViewController: DRCLoginViewControllerDelegate {
         delegate?.drcLoginRootControllerDidAuthenticateSuccess(self)
     }
 
-    func drcLoginController(controller: DRCLoginViewController, didAttemptSignInWithPINCode PINCode: String) {
-        delegate?.drcLoginRootController(self, didAttemptSignInWithPINCode: PINCode)
+    func drcLoginController(controller: DRCLoginViewController, didAttemptSignInWithPINCode PINCode: String) -> Bool {
+        return delegate?.drcLoginRootController(self, didAttemptSignInWithPINCode: PINCode) ?? false
     }
 
     func drcLoginController(controller: DRCLoginViewController, didAttemptSignInWithUserName username: String, password: String, twoFactorCode: String, complete: (success: Bool, twoFactorRequired: Bool, error: NSError?) -> Void) {

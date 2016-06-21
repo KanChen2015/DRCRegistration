@@ -89,7 +89,7 @@
         <!--On Patient Link View Controller-->
         <scene sceneID="Wdx-Fg-drw">
             <objects>
-                <viewController id="WZM-bf-MKe" customClass="OnPatientLinkViewController" customModule="DRCRegistrationKit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="WZM-bf-MKe" customClass="DRROnPatientLinkViewController" customModule="DRCRegistrationKit" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="iQy-qf-RwL"/>
                         <viewControllerLayoutGuide type="bottom" id="od5-Bk-lRC"/>
@@ -965,9 +965,17 @@
                                     <segue destination="OwQ-ig-Cpm" kind="presentation" modalPresentationStyle="formSheet" id="EPn-Bj-9Lp"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wk0-Ah-SpD">
+                                <rect key="frame" x="450" y="422" width="30" height="30"/>
+                                <state key="normal" title="PIN"/>
+                                <connections>
+                                    <segue destination="odO-Kl-eiW" kind="presentation" identifier="displayPINCodeView" animates="NO" modalPresentationStyle="formSheet" id="XUg-d7-BF8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="wk0-Ah-SpD" firstAttribute="trailing" secondItem="SfW-VL-W2P" secondAttribute="trailing" id="1Gh-Cf-EPl"/>
                             <constraint firstItem="SfW-VL-W2P" firstAttribute="centerY" secondItem="ILY-Zy-QE7" secondAttribute="centerY" id="3Vb-49-GY3"/>
                             <constraint firstItem="AbO-w9-5Mx" firstAttribute="leading" secondItem="SfW-VL-W2P" secondAttribute="leading" id="9KO-rX-IUZ"/>
                             <constraint firstItem="8J2-0d-3lg" firstAttribute="centerX" secondItem="SXO-UG-t2X" secondAttribute="centerX" id="F3m-fN-zvc"/>
@@ -975,6 +983,7 @@
                             <constraint firstItem="IwA-bi-yFE" firstAttribute="top" secondItem="SfW-VL-W2P" secondAttribute="bottom" constant="30" id="Q1P-2D-fGJ"/>
                             <constraint firstItem="SXO-UG-t2X" firstAttribute="leading" secondItem="ILY-Zy-QE7" secondAttribute="leadingMargin" id="VYl-sd-2bv"/>
                             <constraint firstItem="SXO-UG-t2X" firstAttribute="top" secondItem="8J2-0d-3lg" secondAttribute="bottom" constant="27" id="Xui-Dc-9AD"/>
+                            <constraint firstItem="wk0-Ah-SpD" firstAttribute="centerY" secondItem="AbO-w9-5Mx" secondAttribute="centerY" id="ZZN-OW-X2N"/>
                             <constraint firstAttribute="trailingMargin" secondItem="SXO-UG-t2X" secondAttribute="trailing" id="caZ-zl-JeR"/>
                             <constraint firstItem="daV-Rz-HX5" firstAttribute="centerY" secondItem="IwA-bi-yFE" secondAttribute="centerY" id="huL-mF-jzn"/>
                             <constraint firstItem="IwA-bi-yFE" firstAttribute="centerX" secondItem="SfW-VL-W2P" secondAttribute="centerX" id="mXD-Lg-BdE"/>
@@ -998,8 +1007,131 @@
             </objects>
             <point key="canvasLocation" x="1465" y="538"/>
         </scene>
+        <!--Code View Controller-->
+        <scene sceneID="Kwo-F6-795">
+            <objects>
+                <viewController id="odO-Kl-eiW" customClass="DRCPINCodeViewController" customModule="DRCRegistrationKit" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jMK-CW-Ve6"/>
+                        <viewControllerLayoutGuide type="bottom" id="qfV-h4-Zda"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="76L-Bh-kCE">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter drchrono PIN Code" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="09X-Wd-HOw">
+                                <rect key="frame" x="178" y="50" width="245" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="52c-Zx-eA3"/>
+                                    <constraint firstAttribute="width" constant="245" id="dz1-ew-pcZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Pdf-3H-r8g">
+                                <rect key="frame" x="223" y="94" width="156" height="24"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="○" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dPR-0b-bf0">
+                                        <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="f3z-je-JfN"/>
+                                            <constraint firstAttribute="width" constant="24" id="y2L-ct-hVg"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="○" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sav-VH-eOK">
+                                        <rect key="frame" x="44" y="0.0" width="24" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="24" id="9PQ-r6-dSI"/>
+                                            <constraint firstAttribute="height" constant="24" id="Ecj-wx-HiX"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="○" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uhb-iY-60H">
+                                        <rect key="frame" x="88" y="0.0" width="24" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="9qG-oK-0oU"/>
+                                            <constraint firstAttribute="width" constant="24" id="xu3-XT-Dqh"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="○" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hw4-Ob-dOU">
+                                        <rect key="frame" x="132" y="0.0" width="24" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="dj9-vG-NTx"/>
+                                            <constraint firstAttribute="width" constant="24" id="xOJ-HC-F5B"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1vb-xi-q5m">
+                                <rect key="frame" x="10" y="562" width="25" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <connections>
+                                    <action selector="pincodeInputEditingChanged:" destination="odO-Kl-eiW" eventType="editingChanged" id="N7M-dt-hCK"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vw0-Pp-DaK">
+                                <rect key="frame" x="279" y="138" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="35k-pR-jL3"/>
+                                    <constraint firstAttribute="height" constant="44" id="fcu-tt-HaF"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" image="icon-fingerprint-xl"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DHf-Sp-otM">
+                                <rect key="frame" x="230" y="202" width="143" height="30"/>
+                                <state key="normal" title="Login With Password">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginWithPasswordButtonClicked:" destination="odO-Kl-eiW" eventType="touchUpInside" id="q9u-e8-H6n"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.27450980390000002" green="0.54901960780000003" blue="0.84313725490000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="vw0-Pp-DaK" firstAttribute="centerX" secondItem="Pdf-3H-r8g" secondAttribute="centerX" id="3AC-FC-EXD"/>
+                            <constraint firstItem="qfV-h4-Zda" firstAttribute="top" secondItem="1vb-xi-q5m" secondAttribute="bottom" constant="8" id="J9v-4v-BkQ"/>
+                            <constraint firstItem="DHf-Sp-otM" firstAttribute="top" secondItem="vw0-Pp-DaK" secondAttribute="bottom" constant="20" id="JG3-qV-kFr"/>
+                            <constraint firstItem="Pdf-3H-r8g" firstAttribute="centerX" secondItem="09X-Wd-HOw" secondAttribute="centerX" id="Qu0-AU-0tX"/>
+                            <constraint firstItem="DHf-Sp-otM" firstAttribute="centerX" secondItem="vw0-Pp-DaK" secondAttribute="centerX" id="V2s-Ie-VY7"/>
+                            <constraint firstItem="vw0-Pp-DaK" firstAttribute="top" secondItem="Pdf-3H-r8g" secondAttribute="bottom" constant="20" id="cGU-pL-eTA"/>
+                            <constraint firstItem="09X-Wd-HOw" firstAttribute="centerX" secondItem="76L-Bh-kCE" secondAttribute="centerX" id="gYI-Cu-sxG"/>
+                            <constraint firstItem="09X-Wd-HOw" firstAttribute="top" secondItem="jMK-CW-Ve6" secondAttribute="bottom" constant="50" id="i0C-iV-rWT"/>
+                            <constraint firstItem="Pdf-3H-r8g" firstAttribute="top" secondItem="09X-Wd-HOw" secondAttribute="bottom" constant="20" id="ksz-f5-aCk"/>
+                            <constraint firstItem="1vb-xi-q5m" firstAttribute="leading" secondItem="76L-Bh-kCE" secondAttribute="leadingMargin" constant="-10" id="ubb-yz-Yfp"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="PINCodeHolderView" destination="Pdf-3H-r8g" id="9sH-4f-7wP"/>
+                        <outlet property="PINCodesInput" destination="1vb-xi-q5m" id="CWg-fV-eZr"/>
+                        <outlet property="touchIDButton" destination="vw0-Pp-DaK" id="vTM-jM-eQF"/>
+                        <outletCollection property="PINCodes" destination="dPR-0b-bf0" collectionClass="NSMutableArray" id="yQE-YW-c7q"/>
+                        <outletCollection property="PINCodes" destination="Sav-VH-eOK" collectionClass="NSMutableArray" id="3yO-WQ-267"/>
+                        <outletCollection property="PINCodes" destination="Uhb-iY-60H" collectionClass="NSMutableArray" id="nae-Y8-mPy"/>
+                        <outletCollection property="PINCodes" destination="hw4-Ob-dOU" collectionClass="NSMutableArray" id="fIG-1X-zTL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="95q-eH-1Z3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2186" y="529"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="icon-fingerprint-xl" width="32" height="32"/>
         <image name="icon-onpatient-download" width="40" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>

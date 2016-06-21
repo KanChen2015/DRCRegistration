@@ -1,5 +1,5 @@
 //
-//  OnPatientLinkViewController.swift
+//  DRROnPatientLinkViewController.swift
 //  DRCRegistrationKit
 //
 //  Created by Kan Chen on 6/20/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OnPatientLinkViewController: UIViewController {
+class DRROnPatientLinkViewController: UIViewController {
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return .LightContent
     }
